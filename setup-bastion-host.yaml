@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: bastion
   vars:
     installs: 1
     FIX: 1
