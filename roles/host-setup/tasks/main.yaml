@@ -14,7 +14,6 @@
   user: >
     name=darleya
     password= "{{vault_userPassword}}"
-    password=$6$LMD1fpwMQKkFCQ3n$CC55TcLwFvwNjjEvSixi4tHwjie6aP5bm9Cu5bLtx9zll4a70MBaufQiOmlJQ1oYXAee5GuS7RLte6FqZCh7q1
     shell=/bin/bash
     uid=2126
     groups=wheel
