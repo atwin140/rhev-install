@@ -1,0 +1,8 @@
+- hosts: all
+  vars:
+    installs: 1
+    FIX: 1
+    REPORT: 1
+
+  roles:
+    - rhsm

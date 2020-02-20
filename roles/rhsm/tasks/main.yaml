@@ -1,0 +1,6 @@
+- name: Register as user with password and auto-subscribe to available content.
+  redhat_subscription:
+    state: present
+    username: "{{vault_rhnUserID}}"
+    password: "{{vault_rhnUserPass}}"
+    auto_attach: true
