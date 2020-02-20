@@ -5,4 +5,5 @@
     REPORT: 1
 
   roles:
-    - rhsm
+    - host-setup
+    # - rhsm
