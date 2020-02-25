@@ -7,10 +7,7 @@
 
 - name: Disable all repositories except rhel-7-server-rhvh-4-rpms
   rhsm_repository:
-    name: |
-      - rhel-7-server-rhv-4-mgmt-agent-rpms
-      - rhel-7-server-rpms
-      - rhel-7-server-ansible-2-rpms
+    name: "rhel-7-server-rhv-4-mgmt-agent-rpms,rhel-7-server-rpms,rhel-7-server-ansible-2-rpms"
     purge: True
 
 
