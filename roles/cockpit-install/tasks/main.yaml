@@ -1,6 +1,6 @@
 - name: install the Cockpit 
   yum:
-    name: cockpit
+    name: cockpit-ovirt-dashboard
     state: latest
 
 - name: enable Cockpit.socket
