@@ -1,0 +1,22 @@
+- name: install the Cockpit 
+  dnf:
+    name: cockpit
+    state: latest
+
+- name: enable Cockpit
+  systemd:
+    name: cockpit
+    state: started
+    enabled: yes
+
+- name: enable Cockpit.socket
+  systemd:
+    name: cockpit.socket
+    state: started
+    enabled: yes
+- name:
+  firewalld:
+    service: cockpit
+    permanent: true
+    state: enabled
+    
