@@ -1,5 +1,5 @@
 - name: install the Cockpit 
-  dnf:
+  yum:
     name: cockpit
     state: latest
 
