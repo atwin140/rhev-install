@@ -12,4 +12,5 @@
     # - host-setup
     # - rhsm
     - cockpit-install
+    - sub-rhev
 
