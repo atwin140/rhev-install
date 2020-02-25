@@ -1,1 +1,13 @@
-test
+- name: Register as user with password and auto-subscribe to available content.
+  redhat_subscription:
+    state: present
+    username: "{{vault_rhnUserID}}"
+    password: "{{vault_rhnUserPass}}"
+    pool_ids: "{{vault_pool_id}}"
+
+- name: Disable all repositories except rhel-7-server-rhvh-4-rpms
+  rhsm_repository:
+    name: rhel-7-server-rhvh-4-rpms
+    purge: True
+
+
