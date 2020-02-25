@@ -1,0 +1,10 @@
+- name: Install packages
+  dnf:
+    name:
+      - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm 
+      - ansible
+      - dnsmasq
+      - syslinux
+      - tftp-server
+      - vsftpd
+    state: latest

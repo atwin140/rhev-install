@@ -1,0 +1,25 @@
+- name: Install HTTPD
+  yum: 
+    name: httpd
+    state: installed
+
+- name: Enable httpd
+  systemd: 
+    name: http
+    state: started
+    enabled: yes
+
+- name: Setup /var/www/html/kickstart
+  file: 
+    path: /var/www/html/kickstart
+    owner: apache
+    group: apache
+
+
+- name: Mount DVD read-only
+  mount:
+    path: /var/www/html/rhel
+    src: /dev/sr0
+    fstype: iso9660
+    opts: ro,noauto
+    state: present
