@@ -1,6 +1,9 @@
 - hosts: rhev
   vars:
     ansible_user: pi
+    ansible_become_user: root
+    ansible_become_method: sudo
+    ansible_become: true
     installs: 1
     FIX: 1
     REPORT: 1
