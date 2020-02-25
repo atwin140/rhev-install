@@ -1,0 +1,10 @@
+- hosts: rhev
+  vars:
+    installs: 1
+    FIX: 1
+    REPORT: 1
+
+  roles:
+    - host-setup
+    - rhsm
+    - cockpit-install
