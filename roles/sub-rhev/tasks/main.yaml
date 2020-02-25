@@ -7,11 +7,11 @@
 
 - name: Disable all repositories except rhel-7-server-rhvh-4-rpms
   shell: |
-  subscription-manager repos \
-    --disable='*' \
-    --enable=rhel-7-server-rpms \
-    --enable=rhel-7-server-rhv-4-mgmt-agent-rpms \
-    --enable=rhel-7-server-ansible-2-rpms
+    subscription-manager repos \
+      --disable='*' \
+      --enable=rhel-7-server-rpms \
+      --enable=rhel-7-server-rhv-4-mgmt-agent-rpms \
+      --enable=rhel-7-server-ansible-2-rpms
   
 
 
