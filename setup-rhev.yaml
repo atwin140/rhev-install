@@ -7,6 +7,6 @@
 
   roles:
     # - host-setup
-    - rhsm
+    # - rhsm
     - cockpit-install
 
