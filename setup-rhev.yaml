@@ -6,7 +6,7 @@
     REPORT: 1
 
   roles:
-    - host-setup
+    # - host-setup
     - rhsm
     - cockpit-install
 
