@@ -10,9 +10,8 @@
 
   roles:
     # - host-setup
-    # - rhsm
-    - cockpit-install
     - sub-rhev
+    - cockpit-install
 
 
 
