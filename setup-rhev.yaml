@@ -1,6 +1,6 @@
 - hosts: rhev
   vars:
-    ansible_user: pi
+    # ansible_user: darleya
     ansible_become_user: root
     ansible_become_method: sudo
     ansible_become: true
