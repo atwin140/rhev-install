@@ -9,9 +9,9 @@
     REPORT: 1
 
   roles:
-    - host-setup
-    - sub-rhev
-    - cockpit-install
-
+    # - host-setup
+    # - sub-rhev
+    # - cockpit-install
+    - gluster_install
 
 
