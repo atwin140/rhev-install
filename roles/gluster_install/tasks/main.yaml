@@ -7,6 +7,7 @@
       block:  |
         192.168.1.201      rhev01.darleyhome.com gluster01
         192.168.1.202      rhev02.darleyhome.com gluster02
+        192.168.1.203      rhev03.darleyhome.com gluster03
 
 - name: Setup Gluster repo
   blockinfile:
