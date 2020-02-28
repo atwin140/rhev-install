@@ -8,5 +8,25 @@
         192.168.1.201      rhev01.darleyhome.com gluster01
         192.168.1.202      rhev02.darleyhome.com gluster02
 
+- name: Setup Gluster repo
+  blockinfile:
+      path: /etc/yum.repos.d/Gluster.repo # required. The file to modify.,Before 2.3 this option was only usable as I(dest), I(destfile) and I(name).
+      group: undefined # not required. Name of the group that should own the file/directory, as would be fed to I(chown).
+      insertbefore: BOF # not required. choices: BOF;*regex*. If specified, the block will be inserted before the last match of specified regular expression. A special value is available; C(BOF) for inserting the block at the beginning of the file.  If specified regular expression has no matches, the block will be inserted at the end of the file.
+      unsafe_writes: no # not required. By default this module uses atomic operations to prevent data corruption or inconsistent reads from the target files, but sometimes systems are configured or just broken in ways that prevent this. One example is docker mounted files, which cannot be updated atomically from inside the container and can only be written in an unsafe manner.,This option allows Ansible to fall back to unsafe methods of updating files when atomic operations fail (however, it doesn't force Ansible to perform unsafe writes). IMPORTANT! Unsafe writes are subject to race conditions and can lead to data corruption.
+      backup: yes # not required. Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
+      create: yes # not required. Create a new file if it doesn't exist.
+      seuser: undefined # not required. User part of SELinux file context. Will default to system policy, if applicable. If set to C(_default), it will use the C(user) portion of the policy if available.
+      serole: undefined # not required. Role part of SELinux file context, C(_default) feature works as for I(seuser).
+      owner: undefined # not required. Name of the user that should own the file/directory, as would be fed to I(chown).
+      mode: undefined # not required. Mode the file or directory should be. For those used to I(/usr/bin/chmod) remember that modes are actually octal numbers. You must either add a leading zero so that Ansible's YAML parser knows it is an octal number (like C(0644) or C(01777)) or quote it (like C('644') or C('1777')) so Ansible receives a string and can do its own conversion from string into number.  Giving Ansible a number without following one of these rules will end up with a decimal number which will have unexpected results. As of version 1.8, the mode may be specified as a symbolic mode (for example, C(u+rwx) or C(u=rw,g=r,o=r)).
+      marker: # {mark ANSIBLE MANAGED BLOCK} # not required. The marker line template. "{mark}" will be replaced with the values in marker_begin (default="BEGIN") and marker_end (default="END").
+      state: present # not required. choices: absent;present. Whether the block should be there or not.
+      block: |
+        [gluster38]
+        name=Gluster 3.8
+        baseurl=http://mirror.centos.org/centos/7/storage/x86_64/gluster-7/
+        gpgcheck=0
+        enabled=1 
 
-http://mirror.centos.org/centos/7/storage/x86_64/gluster-7/
+
