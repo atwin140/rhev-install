@@ -22,7 +22,7 @@
 
 - name: Install Gluster server packages
   yum:
-    name: glusterfs-server, lvm
+    name: glusterfs-server, lvm2*
     state: latest
 
 - name: setup lvm
