@@ -11,14 +11,17 @@
 - name: Setup Gluster repo
   blockinfile:
       path: /etc/yum.repos.d/Gluster.repo # required. The file to modify.,Before 2.3 this option was only usable as I(dest), I(destfile) and I(name).
-      backup: yes # not required. Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
       create: yes # not required. Create a new file if it doesn't exist.
       state: present # not required. choices: absent;present. Whether the block should be there or not.
       block: |
-        [gluster38]
-        name=Gluster 3.8
+        [gluster7]
+        name=Gluster 7
         baseurl=http://mirror.centos.org/centos/7/storage/x86_64/gluster-7/
         gpgcheck=0
         enabled=1 
 
+- name: Install Gluster server packages
+  yum:
+    name: glusterfs-server
+    state: lastest
 
