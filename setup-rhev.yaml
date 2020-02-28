@@ -7,6 +7,12 @@
     installs: 1
     FIX: 1
     REPORT: 1
+    var_vg_name: glusterVG
+    var_lv_name: gluster_vol
+    var_mount_point: /data/gluster
+    var_disk: nvme0n1
+    var_file_system: xfs
+
 
   roles:
     # - host-setup

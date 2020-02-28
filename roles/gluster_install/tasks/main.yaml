@@ -22,6 +22,32 @@
 
 - name: Install Gluster server packages
   yum:
-    name: glusterfs-server
+    name: glusterfs-server, lvm
     state: latest
+
+- name: setup lvm
+  lvg:
+    vg: "{{ var_vg_name }}"
+    pvs: "/dev/{{var_disk}}"
+    pesize: 32
+
+- name: LVM create Volume
+  lvol:
+    vg: "{{ var_vg_name }}"
+    lv: "{{ var_lv_name }}"
+    size: 100%FREE
+
+- name: Create the file system
+  filesystem:
+    fstype: "{{ var_file_system }}"
+    dev: "/dev/mapper/{{ var_vg_name }}-{{ var_lv_name }}"
+
+- name: mount the noew filesystem
+  mount:
+    path: "{{var_mount_point}}"
+    src: "/dev/mapper/{{ var_vg_name }}-{{ var_lv_name }}"
+    fstype: "{{ var_file_system }}"
+    opts: defaults
+    state: mounted
+
 
