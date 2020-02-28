@@ -23,5 +23,5 @@
 - name: Install Gluster server packages
   yum:
     name: glusterfs-server
-    state: lastest
+    state: latest
 
