@@ -1,0 +1,12 @@
+- name: update Hosts file 
+  blockinfile:
+      path: /etd/hosts
+      backup: yes # not required. Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
+      marker: ----Gluster---- # {mark ANSIBLE MANAGED BLOCK} # not required. The marker line template. "{mark}" will be replaced with the values in marker_begin (default="BEGIN") and marker_end (default="END").
+      state: present # not required. choices: absent;present. Whether the block should be there or not.
+      block:  |
+        192.168.1.201      rhev01.darleyhome.com gluster01
+        192.168.1.202      rhev02.darleyhome.com gluster02
+
+
+http://mirror.centos.org/centos/7/storage/x86_64/gluster-7/
