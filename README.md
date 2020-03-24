@@ -10,13 +10,19 @@ Ansible tasks
 -	Setup DNS
 
 Create ssh key
+```diff
 ssh-keygen -t rsa -b 4096
 echo "eval `ssh-agent`; ssh-add" >> ~/.bash_profile
+```
 1.	Create a password file for the ansible vault:
-a.	$vi ../vault_pw_file
+```diff
+$ vi ../vault_pw_file
+```
 2.	Create Ansible vault and add subscription information:
 a.	Add rhnUserID and rhnUserPass
-b.	$ ansible-vault create group_vars/all/vault.yaml
-c.	vault_rhnUserID: #######
-d.	vault_rhnUserPass: #######
+```diff
+$ ansible-vault create group_vars/all/vault.yaml
+	vault_rhnUserID: #######
+    vault_rhnUserPass: #######
+```
 e.	ansible
